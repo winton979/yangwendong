@@ -6,5 +6,8 @@
   <packaging>pom</packaging>
   <modules>
   	<module>nymph-Themis</module>
+  	<module>nymph-core</module>
+  	<module>nymph-config</module>
+  	<module>nymph-static</module>
   </modules>
 </project>

@@ -46,6 +46,15 @@
 			</list>
 		</property>
 	</bean>
+	
+	<!-- static resource handler -->
+	<mvc:resources mapping="/js/**" location="classpath:static/js/"  cache-period=""/>
+	<mvc:resources mapping="/css/**" location="classpath:static/css/"  cache-period=""/>
+	<mvc:resources mapping="/static/**" location="classpath:static/libra/"  cache-period=""/>
+	
+	<!-- 定义无需Controller的url<->view直接映射 -->
+	<mvc:view-controller path="/" view-name="redirect:/index"/>
+	
 	<!-- 定义跳转的文件的前后缀 ，视图模式配置 -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

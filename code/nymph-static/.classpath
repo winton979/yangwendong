@@ -32,9 +32,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/nymph-config"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/nymph-core"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
