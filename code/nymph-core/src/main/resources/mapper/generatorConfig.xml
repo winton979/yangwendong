@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  	 <classPathEntry location="D:\.m2\mysql\mysql-connector-java\5.1.22\mysql-connector-java-5.1.22.jar" />   
+  <context id="context1">
+    <jdbcConnection connectionURL="jdbc:mysql://rm-uf65aqc37bj97xoolo.mysql.rds.aliyuncs.com:3306/nymph" driverClass="com.mysql.jdbc.Driver" password="q@oEeZLz2mbk" userId="root" />
+    <javaModelGenerator targetPackage="com.themis.test.entity" targetProject="nymph-Themis" />
+    <sqlMapGenerator targetPackage="com.themis.test.mapper" targetProject="nymph-Themis" />
+    <javaClientGenerator targetPackage="com.themis.test.dao" targetProject="nymph-Themis" type="XMLMAPPER" />
+    <table tableName="" domainObjectName="">
+    </table>
+  </context>
+</generatorConfiguration>

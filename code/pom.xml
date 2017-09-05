@@ -9,5 +9,6 @@
   	<module>nymph-core</module>
   	<module>nymph-config</module>
   	<module>nymph-static</module>
+  	<module>nymph-common</module>
   </modules>
 </project>

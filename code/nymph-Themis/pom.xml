@@ -10,20 +10,20 @@
 	<packaging>war</packaging>
 
 	<dependencies>
-		<dependency>
+		<dependency> 
 			<groupId>com.nymph</groupId>
 			<artifactId>nymph-config</artifactId>
-			<version>1.1</version>
+			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.nymph</groupId>
 			<artifactId>nymph-core</artifactId>
-			<version>1.1</version>
+			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.nymph</groupId>
 			<artifactId>nymph-static</artifactId>
-			<version>1.1</version>
+			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
 
