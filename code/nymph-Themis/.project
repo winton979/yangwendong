@@ -3,6 +3,10 @@
 	<name>nymph-Themis</name>
 	<comment></comment>
 	<projects>
+		<project>nymph-config</project>
+		<project>nymph-static</project>
+		<project>nymph-core</project>
+		<project>nymph-common</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
