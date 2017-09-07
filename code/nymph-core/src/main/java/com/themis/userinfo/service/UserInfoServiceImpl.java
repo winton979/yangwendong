@@ -15,6 +15,9 @@ public class UserInfoServiceImpl implements UserInfoService {
 
 	@Override
 	public UserInfo selectByPrimaryKey(Integer id) {
+		if (id == null) {
+			return new UserInfo();
+		}
 		return userInfoMapper.selectByPrimaryKey(id);
 	}
 	
