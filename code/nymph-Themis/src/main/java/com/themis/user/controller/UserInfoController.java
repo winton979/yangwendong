@@ -10,13 +10,13 @@ import com.themis.userinfo.entity.UserInfo;
 import com.themis.userinfo.service.UserInfoService;
 
 @Controller
-@RequestMapping(value="user/info")
+@RequestMapping(value="/user/info")
 public class UserInfoController {
 	
 	@Autowired
 	private UserInfoService UserInfoService;
 	
-	@GetMapping(value="test")
+	@GetMapping(value="/test")
 	@ResponseBody
 	public UserInfo test(Integer id) {
 		return UserInfoService.selectByPrimaryKey(id);
