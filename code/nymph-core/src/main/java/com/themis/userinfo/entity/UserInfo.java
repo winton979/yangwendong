@@ -1,6 +1,13 @@
 package com.themis.userinfo.entity;
 
-public class UserInfo {
+import java.io.Serializable;
+
+public class UserInfo implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7032030807426006614L;
 
 	@Override
 	public String toString() {

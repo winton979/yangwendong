@@ -240,6 +240,12 @@
 			<version>1.7.2.RELEASE</version>
 		</dependency>
 
+		<!-- hikari连接池 -->
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP</artifactId>
+			<version>2.4.7</version>
+		</dependency>
 	</dependencies>
 
 	<build>

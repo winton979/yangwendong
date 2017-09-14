@@ -1,5 +1,7 @@
 package com.themis.userinfo.service;
 
+import org.springframework.cache.annotation.Cacheable;
+
 import com.themis.userinfo.entity.UserInfo;
 
 public interface UserInfoService {
@@ -9,6 +11,7 @@ public interface UserInfoService {
 	 * @param userInfo
 	 * @return
 	 */
+	@Cacheable(value="test",key="'test'")
 	UserInfo selectByPrimaryKey(Integer id);
 	
 }
