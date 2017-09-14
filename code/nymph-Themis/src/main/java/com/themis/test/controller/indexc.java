@@ -1,6 +1,7 @@
 package com.themis.test.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -8,10 +9,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(value="h")
+@RequestMapping(value="us")
 public class indexc {
-	@RequestMapping(value="i")
+	@RequestMapping(value="game")
 	public void index (HttpServletResponse resp) throws IOException {
-		resp.getWriter().print("123");
+		PrintWriter pw = resp.getWriter();
+		pw.print("HELLO WORLD");
+		pw.close();
 	}
 }

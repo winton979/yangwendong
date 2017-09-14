@@ -1,10 +1,67 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.nymph</groupId>
-  <artifactId>Nymph</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <modules>
-  	<module>nymph-Themis</module>
-  </modules>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.nymph</groupId>
+	<artifactId>Nymph</artifactId>
+	<version>1.1</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>nymph-Themis</module>
+		<module>nymph-core</module>
+		<module>nymph-config</module>
+		<module>nymph-static</module>
+		<module>nymph-common</module>
+	</modules>
+	
+	<properties>  
+         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
+     </properties>  
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<skip>false</skip>
+					<testFailureIgnore>true</testFailureIgnore>
+					<argLine>${surefireArgLine}</argLine>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.7.8</version>
+				<configuration>
+					<destFile>${project.build.directory}/coverage-reports/jacoco-ut.exec</destFile>
+					<dataFile>${project.build.directory}/coverage-reports/jacoco-ut.exec</dataFile>
+					<skip>${skipTests}</skip>
+					<output>file</output>
+					<append>true</append>
+				</configuration>
+				<executions>
+					<execution>
+						<id>pre-unit-test</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+						<configuration>
+							<propertyName>surefireArgLine</propertyName>
+						</configuration>
+					</execution>
+					<execution>
+						<id>post-unit-test</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.reporting.outputDirectory}/jacoco-ut</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>

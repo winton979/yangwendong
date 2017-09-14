@@ -6,33 +6,24 @@
 		<artifactId>Nymph</artifactId>
 		<version>1.1</version>
 	</parent>
-	<artifactId>nymph-Themis</artifactId>
-	<packaging>war</packaging>
+	<artifactId>nymph-static</artifactId>
 
 	<build>
-		<finalName>nymph-Themis</finalName>
+		<finalName>nymphg-static</finalName>
+		<plugins>
+			<!-- define the project compile level -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
-
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
-			<!-- 表示开发的时候引入，发布的时候不会加载此包 -->
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.nymph</groupId>
-			<artifactId>nymph-core</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.nymph</groupId>
-			<artifactId>nymph-static</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-	</dependencies>
-
 	<profiles>
 		<profile>
 			<id>jdk-1.8</id>
