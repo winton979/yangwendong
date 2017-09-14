@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+	<!-- 控制台日志输出 -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	<!-- 文件日志 -->
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>tmp/logs/app.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>tmp/logs/app.%d{yyyy-MM-dd}.log</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<!-- 日志级别过滤 -->
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>WARM</level>
+		</filter>
+	</appender>
+	<!-- LOG4JDBC文件日志 -->
+	<appender name="LOG4JDBC"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>tmp/logs/sql.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>tmp/logs/sql.%d{yyyy-MM-dd}.log</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<!-- 日志级别过滤 -->
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<!-- <level>INFO</level> -->
+			<level>debug</level>
+		</filter>
+	</appender>
+	<!-- EHCACHE缓存日志 -->
+	<appender name="EHCACHE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>tmp/logs/ehcache.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>tmp/logs/ehcache.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<!-- 日志级别过滤 -->
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>WARM</level>
+		</filter>
+	</appender>
+
+
+	<!-- EHCACHE缓存日志 <logger name="com.pricl.xsc.core.ehcache" level="INFO" 
+		> <appender-ref ref="EHCACHE" /> </logger> -->
+	<!--log4jdbc -->
+	<logger name="jdbc.sqltiming" level="INFO">
+		<appender-ref ref="LOG4JDBC" />
+	</logger>
+
+	<!-- org.apache.shiro -->
+	<logger name="org.apache.shiro" level="debug" />
+	<!-- <logger name="org.springframework.web" level="DEBUG"/> -->
+	<!-- <root level="debug"> -->
+	<root level="DEBUG">
+		<appender-ref ref="FILE" />
+		<appender-ref ref="STDOUT" />
+	</root>
+
+</configuration>

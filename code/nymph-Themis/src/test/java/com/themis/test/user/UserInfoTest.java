@@ -38,9 +38,5 @@ public class UserInfoTest extends BaseTest{
 		Assert.assertEquals("admin", userInfo.getNickname());
 	}
 	
-	@Test
-	public void testController() {
-		controller.test(1);
-	}
 	
 }
