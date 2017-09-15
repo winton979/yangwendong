@@ -7,9 +7,31 @@
 	<!-- Spring和mybatis的配置文件 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath*:/applicationContext.xml</param-value>
+		<param-value>classpath*:/applicationContext.xml
+					classpath:net/bull/javamelody/monitoring-spring.xml  		
+		</param-value>
 	</context-param>
+
+	<listener>
+		<listener-class>net.bull.javamelody.SessionListener
+		</listener-class>
+	</listener>
+	<filter>
+		<filter-name>javamelody</filter-name>
+		<filter-class>net.bull.javamelody.MonitoringFilter</filter-class>
+		<async-supported>true</async-supported>
+	</filter>
+	<filter-mapping>
+		<filter-name>javamelody</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>ASYNC</dispatcher>
+	</filter-mapping>
+
 	<!-- 编码过滤器 -->
+	<listener>
+		<listener-class>net.bull.javamelody.SessionListener</listener-class>
+	</listener>
 	<filter>
 		<filter-name>encodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -32,14 +54,9 @@
 		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
 	</listener>
 
-	<!-- <context-param>
-		<param-name>logbackConfigLocation</param-name>
-		<param-value>classpath:logback.xml</param-value>
-	</context-param>
-	<listener>
-		<listener-class>ch.qos.logback.ext.spring.web.LogbackConfigListener</listener-class>
-	</listener>
- -->
+	<!-- <context-param> <param-name>logbackConfigLocation</param-name> <param-value>classpath:logback.xml</param-value> 
+		</context-param> <listener> <listener-class>ch.qos.logback.ext.spring.web.LogbackConfigListener</listener-class> 
+		</listener> -->
 	<!-- Spring MVC servlet -->
 	<servlet>
 		<servlet-name>SpringMVC</servlet-name>
