@@ -1,5 +1,6 @@
 package com.themis.userinfo.entity;
 
+
 import java.io.Serializable;
 
 public class UserInfo implements Serializable{

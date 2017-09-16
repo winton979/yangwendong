@@ -31,7 +31,6 @@
 			<artifactId>nymph-static</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		
 	</dependencies>
 
 	<profiles>
