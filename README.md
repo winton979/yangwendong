@@ -1,2 +1,2 @@
-# UG
-玩个鬼喔
+# ssm framework
+ learning and build
