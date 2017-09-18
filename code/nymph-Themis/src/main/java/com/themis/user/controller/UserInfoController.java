@@ -21,7 +21,7 @@ public class UserInfoController {
 	@Autowired
 	private UserInfoService UserInfoService;
 	
-	@GetMapping(value="/test")
+	@GetMapping(value="/test/{id}")
 	@ResponseBody
 	public R test(Integer id,HttpServletRequest req) {
 		PageInfo<UserInfo> pageInfo = PageHelper.startPage(req).doSelectPageInfo(() -> UserInfoService.selectByPrimaryKey(id));

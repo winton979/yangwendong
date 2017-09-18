@@ -10,7 +10,6 @@ public interface UserInfoService {
 	 * @param userInfo
 	 * @return
 	 */
-	@Cacheable(value="test",key="'test'")
 	UserInfo selectByPrimaryKey(Integer id);
 	
 }
