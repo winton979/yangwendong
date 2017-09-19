@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
+	<properties resource="mapperdbconfig.properties"/>
   	 <classPathEntry location="D:\.m2\mysql\mysql-connector-java\5.1.22\mysql-connector-java-5.1.22.jar" />   
   <context id="context1">
-    <jdbcConnection connectionURL="jdbc:mysql://rm-uf65aqc37bj97xoolo.mysql.rds.aliyuncs.com:3306/nymph" driverClass="com.mysql.jdbc.Driver" password="q@oEeZLz2mbk" userId="root" />
+  	<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
+  	<plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+  	<plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+    <jdbcConnection connectionURL="${db.url}" driverClass="${db.driver}" password="${db.password}" userId="${db.username}" />
     <javaModelGenerator targetPackage="com.themis.userinfo.entity" targetProject="nymph-core" />
     <sqlMapGenerator targetPackage="com.themis.userinfo.mapper" targetProject="nymph-Themis" />
     <javaClientGenerator targetPackage="com.themis.userinfo.dao" targetProject="nymph-core" type="XMLMAPPER" />
