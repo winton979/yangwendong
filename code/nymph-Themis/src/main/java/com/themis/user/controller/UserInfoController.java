@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.coreopsis.R;
 import com.github.pagehelper.PageHelper;
@@ -33,4 +34,15 @@ public class UserInfoController {
 		return R.ok(pageInfo, "查询分页成功");
 	}
 	
+	@GetMapping(value="/testbeetl")
+	public String beetl() {
+		return "TestBeetl";
+	}
+	
+	@GetMapping(value="/testbeetl2")
+	public ModelAndView beetl2(ModelAndView mav) {
+		mav.addObject("beetl", "beetl");
+		mav.setViewName("TestBeetl");
+		return mav;
+	}
 }
