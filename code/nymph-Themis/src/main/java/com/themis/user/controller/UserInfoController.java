@@ -40,7 +40,7 @@ public class UserInfoController {
 	}
 	
 	@GetMapping(value="/testbeetl2")
-	public ModelAndView  beetl2(ModelAndView mav) {
+	public ModelAndView beetl2(ModelAndView mav) {
 		mav.addObject("beetl", "beetl");
 		mav.setViewName("TestBeetl");
 		return mav;

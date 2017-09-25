@@ -158,11 +158,17 @@ under the License.
     </mirror>
      --> 
 	 <mirror>
-　　<id>repo2</id>
-　　<mirrorOf>central</mirrorOf>
-　　<name>Human Readable Name for this Mirror.</name>
-　　<url>http://repo2.maven.org/maven2/</url>
-</mirror>
+　　	<id>repo2</id>
+　　	<mirrorOf>central</mirrorOf>
+　　	<name>Human Readable Name for this Mirror.</name>
+　　	<url>http://repo2.maven.org/maven2/</url>
+	</mirror>
+	<mirror>
+        <id>nexus-aliyun</id>
+        <mirrorOf>*</mirrorOf>
+        <name>Nexus aliyun</name>
+        <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+    </mirror> 
   </mirrors>
 
   <!-- profiles
