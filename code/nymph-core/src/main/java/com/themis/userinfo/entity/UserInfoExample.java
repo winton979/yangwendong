@@ -5,104 +5,93 @@ import java.util.List;
 
 public class UserInfoExample {
     /**
-     * Auto Generator.
      * Auto Generator database table user_info
      *
-     * @mbg.generated 2017-09-25
+     * @mbg.generated 2017-09-26
      */
     protected String orderByClause;
 
     /**
-     * Auto Generator.
      * Auto Generator database table user_info
      *
-     * @mbg.generated 2017-09-25
+     * @mbg.generated 2017-09-26
      */
     protected boolean distinct;
 
     /**
-     * Auto Generator.
      * Auto Generator database table user_info
      *
-     * @mbg.generated 2017-09-25
+     * @mbg.generated 2017-09-26
      */
     protected List<Criteria> oredCriteria;
 
     /**
-     * Auto Generator.
      * Auto Generator database table user_info
      *
-     * @mbg.generated 2017-09-25
+     * @mbg.generated 2017-09-26
      */
     public UserInfoExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
     /**
-     * Auto Generator.
      * Auto Generator database table user_info
      *
-     * @mbg.generated 2017-09-25
+     * @mbg.generated 2017-09-26
      */
     public void setOrderByClause(String orderByClause) {
         this.orderByClause = orderByClause;
     }
 
     /**
-     * Auto Generator.
      * Auto Generator database table user_info
      *
-     * @mbg.generated 2017-09-25
+     * @mbg.generated 2017-09-26
      */
     public String getOrderByClause() {
         return orderByClause;
     }
 
     /**
-     * Auto Generator.
      * Auto Generator database table user_info
      *
-     * @mbg.generated 2017-09-25
+     * @mbg.generated 2017-09-26
      */
     public void setDistinct(boolean distinct) {
         this.distinct = distinct;
     }
 
     /**
-     * Auto Generator.
      * Auto Generator database table user_info
      *
-     * @mbg.generated 2017-09-25
+     * @mbg.generated 2017-09-26
      */
     public boolean isDistinct() {
         return distinct;
     }
 
     /**
-     * Auto Generator.
      * Auto Generator database table user_info
      *
-     * @mbg.generated 2017-09-25
+     * @mbg.generated 2017-09-26
      */
     public List<Criteria> getOredCriteria() {
         return oredCriteria;
     }
 
     /**
-     * Auto Generator.
      * Auto Generator database table user_info
      *
-     * @mbg.generated 2017-09-25
+     * @mbg.generated 2017-09-26
      */
     public void or(Criteria criteria) {
         oredCriteria.add(criteria);
     }
 
     /**
-     * Auto Generator.
      * Auto Generator database table user_info
      *
-     * @mbg.generated 2017-09-25
+     * @mbg.generated 2017-09-26
      */
     public Criteria or() {
         Criteria criteria = createCriteriaInternal();
@@ -111,10 +100,9 @@ public class UserInfoExample {
     }
 
     /**
-     * Auto Generator.
      * Auto Generator database table user_info
      *
-     * @mbg.generated 2017-09-25
+     * @mbg.generated 2017-09-26
      */
     public Criteria createCriteria() {
         Criteria criteria = createCriteriaInternal();
@@ -125,10 +113,9 @@ public class UserInfoExample {
     }
 
     /**
-     * Auto Generator.
      * Auto Generator database table user_info
      *
-     * @mbg.generated 2017-09-25
+     * @mbg.generated 2017-09-26
      */
     protected Criteria createCriteriaInternal() {
         Criteria criteria = new Criteria();
@@ -136,10 +123,9 @@ public class UserInfoExample {
     }
 
     /**
-     * Auto Generator.
      * Auto Generator database table user_info
      *
-     * @mbg.generated 2017-09-25
+     * @mbg.generated 2017-09-26
      */
     public void clear() {
         oredCriteria.clear();
@@ -148,10 +134,9 @@ public class UserInfoExample {
     }
 
     /**
-     * Auto Generator.
      * Auto Generator database table user_info
      *
-     * @mbg.generated 2017-09-25
+     * @mbg.generated 2017-09-26
      */
     protected abstract static class GeneratedCriteria {
         protected List<Criterion> criteria;
@@ -986,10 +971,9 @@ public class UserInfoExample {
     }
 
     /**
-     * Auto Generator.
      * Auto Generator database table user_info
      *
-     * @mbg.generated do_not_delete_during_merge 2017-09-25
+     * @mbg.generated do_not_delete_during_merge 2017-09-26
      */
     public static class Criteria extends GeneratedCriteria {
 
@@ -999,10 +983,9 @@ public class UserInfoExample {
     }
 
     /**
-     * Auto Generator.
      * Auto Generator database table user_info
      *
-     * @mbg.generated 2017-09-25
+     * @mbg.generated 2017-09-26
      */
     public static class Criterion {
         private String condition;

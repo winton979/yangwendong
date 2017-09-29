@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 import com.themis.userinfo.dao.UserInfoMapper;
 import com.themis.userinfo.entity.UserInfo;
 
+import lombok.NonNull;
+
 
 @Service("userInfoService")
 public class UserInfoServiceImpl implements UserInfoService {
@@ -16,10 +18,7 @@ public class UserInfoServiceImpl implements UserInfoService {
 
 	@Override
 	@Cacheable(value="test",key="'test'")
-	public UserInfo selectByPrimaryKey(Integer id) {
-		if (id == null) {
-			return new UserInfo();
-		}
+	public UserInfo selectByPrimaryKey(@NonNull Integer id) {
 		return userInfoMapper.selectByPrimaryKey(id);
 	}
 	
