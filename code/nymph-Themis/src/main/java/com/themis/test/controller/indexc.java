@@ -14,7 +14,7 @@ public class indexc {
 	@RequestMapping(value="game")
 	public void index (HttpServletResponse resp) throws IOException {
 		PrintWriter pw = resp.getWriter();
-		pw.print("HELLO WORLD");
+		pw.print("HELLO WORLD,WINTON"); // TEST JENKINS
 		pw.close();
 	}
 }
