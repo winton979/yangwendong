@@ -17,8 +17,7 @@ import org.apache.shiro.subject.Subject;
 
 /** 
  * 自定义的指定Shiro验证用户登录的类 
- * @see 在本例中定义了2个用户:jadyer和玄玉,jadyer具有admin角色和admin:manage权限,玄玉不具有任何角色和权限 
- * @create Sep 29, 2013 3:15:31 PM 
+ * 暂未使用数据库权限表设计，暂时写死
  * @author 玄玉<http://blog.csdn.net/jadyer> 
  */  
 public class MyRealm extends AuthorizingRealm {  
@@ -70,10 +69,7 @@ public class MyRealm extends AuthorizingRealm {
             simpleAuthorInfo.addStringPermission("admin:manage");  
             System.out.println("已为用户[jadyer]赋予了[admin]角色和[admin:manage]权限");  
             return simpleAuthorInfo;  
-        }else if(null!=currentUsername && "玄玉".equals(currentUsername)){  
-            System.out.println("当前用户[玄玉]无授权");  
-            return simpleAuthorInfo;  
-        }  
+        }
         //若该方法什么都不做直接返回null的话,就会导致任何用户访问/admin/listUser.jsp时都会自动跳转到unauthorizedUrl指定的地址  
         //详见applicationContext.xml中的<bean id="shiroFilter">的配置  
         return null;  
@@ -106,11 +102,7 @@ public class MyRealm extends AuthorizingRealm {
             AuthenticationInfo authcInfo = new SimpleAuthenticationInfo("jadyer", "jadyer", this.getName());  
             this.setSession("currentUser", "jadyer");  
             return authcInfo;  
-        }else if("玄玉".equals(token.getUsername())){  
-            AuthenticationInfo authcInfo = new SimpleAuthenticationInfo("玄玉", "xuanyu", this.getName());  
-            this.setSession("currentUser", "玄玉");  
-            return authcInfo;  
-        }  
+        }
         //没有返回登录用户名对应的SimpleAuthenticationInfo对象时,就会在LoginController中抛出UnknownAccountException异常  
         return null;  
     }  
