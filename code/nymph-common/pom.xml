@@ -17,6 +17,8 @@
 		<slf4j.version>1.7.7</slf4j.version>
 		<log4j.version>1.2.17</log4j.version>
 		<junit.version>4.12</junit.version>
+		<!-- shiro -->
+		<shiro.version>1.2.3</shiro.version>
 	</properties>
 
 	<dependencies>
@@ -251,6 +253,28 @@
 			<groupId>org.beetl</groupId>
 			<artifactId>beetl-core</artifactId>
 			<version>2.2.3</version>
+		</dependency>
+	
+		<!-- shiro -->
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-core</artifactId>
+			<version>${shiro.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-ehcache</artifactId>
+			<version>${shiro.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-web</artifactId>
+			<version>${shiro.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-spring</artifactId>
+			<version>${shiro.version}</version>
 		</dependency>
 
 
