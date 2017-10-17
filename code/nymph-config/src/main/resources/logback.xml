@@ -65,15 +65,15 @@
 	<!-- EHCACHE缓存日志 <logger name="com.pricl.xsc.core.ehcache" level="INFO" 
 		> <appender-ref ref="EHCACHE" /> </logger> -->
 	<!--log4jdbc -->
-	<logger name="jdbc.sqltiming" level="INFO">
+	<logger name="jdbc.sqltiming" level="ERROR">
 		<appender-ref ref="LOG4JDBC" />
 	</logger>
 
 	<!-- org.apache.shiro -->
-	<logger name="org.apache.shiro" level="debug" />
+	<logger name="org.apache.shiro" level="ERROR" />
 	<!-- <logger name="org.springframework.web" level="DEBUG"/> -->
 	<!-- <root level="debug"> -->
-	<root level="DEBUG">
+	<root level="ERROR">
 		<appender-ref ref="FILE" />
 		<appender-ref ref="STDOUT" />
 	</root>

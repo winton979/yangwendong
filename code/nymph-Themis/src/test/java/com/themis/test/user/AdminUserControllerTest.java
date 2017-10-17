@@ -1,4 +1,4 @@
-package com.themis.base;
+package com.themis.test.user;
 
 
 
@@ -19,23 +19,28 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.coreopsis.filter.Filter_0_FirstFilter;
 import com.themis.admin.controller.AdminController;
+import com.themis.base.BaseTest;
 
-// ------------如果加入以下代码，所有继承该类的测试类都会遵循该配置，也可以不加，在测试类的方法上///控制事务，参见下一个实例
-// 这个非常关键，如果不加入这个注解配置，事务控制就会完全失效！
-// @Transactional
-// 这里的事务关联到配置文件中的事务控制器（transactionManager =
-// "transactionManager"），同时//指定自动回滚（defaultRollback = true）。这样做操作的数据才不会污染数据库！
-// @TransactionConfiguration(transactionManager = "transactionManager",
-// defaultRollback = true)
-// ------------
-@RunWith(SpringJUnit4ClassRunner.class) // 使用junit4进行测试
-@ContextConfiguration(locations = {"classpath*:/applicationContext.xml"}) // 加载配置文件
-@WebAppConfiguration
-public class BaseTest {
+public class AdminUserControllerTest extends BaseTest{
+	
+	private MockMvc mvc;
+	
+	@Before
+	public void setUp() throws Exception {
+		mvc = MockMvcBuilders.standaloneSetup(new AdminController()).addFilters(new Filter_0_FirstFilter()).build();
+	}
 	
 	@Test
 	public void test() {
 		System.out.println();
+	}
+	
+	@Test
+	public void testController () throws Exception {
+		mvc.perform(MockMvcRequestBuilders.post("/index/login").accept(MediaType.parseMediaType("application/json;charset=UTF-8")))
+        .andExpect(status().isOk())
+        .andExpect(content().contentType("application/json;charset=UTF-8"))
+        .andExpect(content().json("{'foo':'bar'}"));
 	}
 	
 }
