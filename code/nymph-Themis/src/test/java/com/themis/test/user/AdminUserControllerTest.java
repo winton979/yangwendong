@@ -7,21 +7,22 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.setup.DefaultMockMvcBuilder;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.coreopsis.filter.Filter_0_FirstFilter;
 import com.themis.admin.controller.AdminController;
 import com.themis.base.BaseTest;
+import com.xiaoleilu.hutool.log.Log;
+import com.xiaoleilu.hutool.log.LogFactory;
+import com.xiaoleilu.hutool.log.StaticLog;
 
 public class AdminUserControllerTest extends BaseTest{
+	
+	Log log = LogFactory.get();
 	
 	private MockMvc mvc;
 	
@@ -37,10 +38,11 @@ public class AdminUserControllerTest extends BaseTest{
 	
 	@Test
 	public void testController () throws Exception {
-		mvc.perform(MockMvcRequestBuilders.post("/index/login").accept(MediaType.parseMediaType("application/json;charset=UTF-8")))
+		ResultActions andExpect = mvc.perform(MockMvcRequestBuilders.post("/index/login").param("usename", "hi").accept(MediaType.parseMediaType("application/json;charset=UTF-8")))
         .andExpect(status().isOk())
         .andExpect(content().contentType("application/json;charset=UTF-8"))
         .andExpect(content().json("{'foo':'bar'}"));
+		StaticLog.info("", andExpect);
 	}
 	
 }

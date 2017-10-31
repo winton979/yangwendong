@@ -44,7 +44,7 @@
 				/index/** = anon
 				
 				<!-- 其他一律拦截 -->
-				/** = authc
+				/** = anon
 			</value>
 		</property>
 	</bean>

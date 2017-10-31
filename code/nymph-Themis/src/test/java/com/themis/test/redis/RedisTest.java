@@ -1,4 +1,4 @@
-package com.themis.redis;
+package com.themis.test.redis;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

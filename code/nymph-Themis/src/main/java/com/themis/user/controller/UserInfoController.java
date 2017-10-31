@@ -1,6 +1,7 @@
 package com.themis.user.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,23 +27,12 @@ public class UserInfoController {
 	@Autowired
 	private UserInfoService UserInfoService;
 	
-	@GetMapping(value="/test/{id}")
+	@GetMapping(value="/test")
 	@ResponseBody
-	public R test(Integer id,HttpServletRequest req) {
+	public R test(int id,HttpServletRequest req) {
 		PageInfo<UserInfo> pageInfo = PageHelper.startPage(req).doSelectPageInfo(() -> UserInfoService.selectByPrimaryKey(id));
 		log.info("aha");
 		return R.ok(pageInfo, "查询分页成功");
 	}
 	
-	@GetMapping(value="/testbeetl")
-	public String beetl() {
-		return "TestBeetl";
-	}
-	
-	@GetMapping(value="/testbeetl2")
-	public ModelAndView beetl2(ModelAndView mav) {
-		mav.addObject("beetl", "beetl");
-		mav.setViewName("TestBeetl");
-		return mav;
-	}
 }
