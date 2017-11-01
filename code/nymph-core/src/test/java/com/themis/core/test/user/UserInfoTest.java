@@ -15,7 +15,7 @@ public class UserInfoTest extends com.themis.core.base.BaseTest{
 	@Test
 	public void testSelectByPK() {
 		UserInfo userInfo = service.selectByPrimaryKey(1);
-		Assert.assertEquals("admin", userInfo.getNickname());
+		Assert.assertEquals("rrr", userInfo.getNickname());
 	}
 	
 }

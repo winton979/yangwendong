@@ -1,9 +1,10 @@
 package com.themis.userinfo.service;
 
-import org.springframework.cache.annotation.Cacheable;
+import com.themis.base.BaseService;
 import com.themis.userinfo.entity.UserInfo;
+import com.themis.userinfo.entity.UserInfoExample;
 
-public interface UserInfoService {
+public interface UserInfoService extends BaseService<UserInfoExample, UserInfo>{
 		
 	/**
 	 * 根据主键查询
