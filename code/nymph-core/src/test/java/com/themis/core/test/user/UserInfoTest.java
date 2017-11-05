@@ -4,10 +4,11 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.themis.core.base.BaseTest;
 import com.themis.userinfo.entity.UserInfo;
 import com.themis.userinfo.service.UserInfoService;
 
-public class UserInfoTest extends com.themis.core.base.BaseTest{
+public class UserInfoTest extends BaseTest{
 	
 	@Autowired
 	UserInfoService service;
