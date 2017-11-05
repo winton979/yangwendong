@@ -1,7 +1,7 @@
 package com.themis.userinfo.entity;
 
 import java.io.Serializable;
-import lombok.Builder;
+
 import lombok.Data;
 
 /**
@@ -12,8 +12,8 @@ import lombok.Data;
  * @mbg.generated do_not_delete_during_merge 2017-09-26
  */
 @Data
-@Builder
 public class UserInfo implements Serializable {
+	
     /**
      * Database Column Remarks:
      *   主键
