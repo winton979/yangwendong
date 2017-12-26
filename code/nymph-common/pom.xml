@@ -81,17 +81,17 @@
 			<version>${spring.version}</version>
 		</dependency>
 		<!-- mybatis核心包 -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
 			<version>${mybatis.version}</version>
-		</dependency>
+		</dependency> -->
 		<!-- mybatis/spring包 -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis-spring</artifactId>
 			<version>1.2.2</version>
-		</dependency>
+		</dependency> -->
 		<!-- 导入java ee jar 包 -->
 		<dependency>
 			<groupId>javax</groupId>
@@ -248,13 +248,6 @@
 			<version>3.1.1</version>
 		</dependency>
 
-		<!-- beetl模板引擎 -->
-		<dependency>
-			<groupId>org.beetl</groupId>
-			<artifactId>beetl-core</artifactId>
-			<version>2.2.3</version>
-		</dependency>
-	
 		<!-- shiro -->
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
@@ -276,7 +269,16 @@
 			<artifactId>shiro-spring</artifactId>
 			<version>${shiro.version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus</artifactId>
+			<version>2.1.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity-engine-core</artifactId>
+			<version>2.0</version>
+		</dependency>
 
 	</dependencies>
 

@@ -6,8 +6,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.themis.userinfo.dao.UserInfoMapper;
-import com.themis.userinfo.entity.UserInfo;
+import com.nymph.userinfo.entity.UserInfo;
+import com.nymph.userinfo.mapper.UserInfoMapper;
 
 public class JunitTestUser {
 
@@ -24,7 +24,7 @@ public class JunitTestUser {
 
 	@Test
 	public void testGetUserById() {
-		UserInfo user = dao.selectByPrimaryKey(1);
+		UserInfo user = dao.selectById(1);
 		System.out.println("用户的名字是 : " + user.toString());
 	}
 }
