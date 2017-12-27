@@ -69,20 +69,20 @@
 	</bean>
 
 	<!-- static resource handler -->
-	<mvc:resources mapping="/js/**" location="classpath:static/js/"
-		cache-period="" />
-	<mvc:resources mapping="/css/**" location="classpath:static/css/"
-		cache-period="" />
-	<mvc:resources mapping="/static/**" location="classpath:static/libra/"
-		cache-period="" />
-
+	<mvc:resources mapping="/static/**" location="classpath:/static/admin/"
+		cache-period="0" />
+	<mvc:resources mapping="/xx.js" location="classpath:/static/js/custom.js" />
+	<mvc:resources mapping="/xx1.js" location="classpath*:/static/js/custom.js" />
+	
+	
+	
 	<!-- 定义无需Controller的url<->view直接映射 -->
 	<mvc:view-controller path="/" view-name="redirect:/index" />
 
 	<!-- 定义跳转的文件的前后缀 ，视图模式配置 -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
 

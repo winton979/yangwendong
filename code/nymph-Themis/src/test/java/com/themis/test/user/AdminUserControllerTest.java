@@ -14,8 +14,8 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.coreopsis.filter.Filter_0_FirstFilter;
-import com.themis.admin.controller.AdminController;
 import com.themis.base.BaseTest;
+import com.themis.controller.admin.AdminController;
 import com.xiaoleilu.hutool.log.Log;
 import com.xiaoleilu.hutool.log.LogFactory;
 import com.xiaoleilu.hutool.log.StaticLog;
