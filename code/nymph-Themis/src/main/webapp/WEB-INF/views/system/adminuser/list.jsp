@@ -1,11 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%@ include file="/WEB-INF/common/taglib.jsp"%>
-<!doctype html>
-<html lang="en">
-<head>
-	<%@ include file="/WEB-INF/common/resource.jsp" %>
-</head>
-<body>
 
 	<table class="layui-table">
 		<thead>
@@ -31,7 +25,7 @@
 			<tr>
 				<td>
 					<div class="layui-unselect layui-form-checkbox" lay-skin="primary"
-						data-id='2'>
+						data-id='1'>
 						<i class="layui-icon">&#xe605;</i>
 					</div>
 				</td>
@@ -60,6 +54,7 @@
 
 
 	<script>
+	
 		layui.use('laydate', function() {
 			var laydate = layui.laydate;
 
@@ -131,6 +126,3 @@
 			});
 		}
 	</script>
-</body>
-
-</html>
