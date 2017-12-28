@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.nymph.adminuser.entity.BbtAdminUser;
 import com.nymph.adminuser.service.IBbtAdminUserService;
 
 /**
@@ -41,7 +44,9 @@ public class BbtAdminUserController {
 	 */
 	@RequestMapping(value = "list", method = RequestMethod.GET)
 	public String list(Model model, HttpServletRequest request) {
-		model.addAttribute("list", iBbtAdminUserService.selectList(null));
+		PageInfo<BbtAdminUser> rInfo = PageHelper.startPage(request).doSelectPageInfo(()-> iBbtAdminUserService.selectList(null));
+		System.out.println(rInfo);
+		model.addAttribute("list", rInfo);
 		return "system/adminuser/list";
 	}
 

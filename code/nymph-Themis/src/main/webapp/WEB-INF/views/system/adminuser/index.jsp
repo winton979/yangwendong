@@ -16,16 +16,16 @@
 	</div>
 	<div class="x-body">
 		<div class="layui-row">
-			<div id="searchForm" class="layui-form layui-col-md12 x-so"
-				onclick="s('searchForm','listDiv')">
-				<input class="layui-input" placeholder="开始日" name="start" id="start">
-				<input class="layui-input" placeholder="截止日" name="end" id="end">
+			<form id="searchForm" class="layui-form layui-col-md12 x-so"
+				onclick="formSubmit('/adminUser/list','searchForm','listDiv')">
+				<input class="layui-input" value="10" name="pageSize" id="pageSize">
+				<input class="layui-input" value="1" name="pageNum" id="pageNumber">
 				<input type="text" name="username" placeholder="请输入用户名"
 					autocomplete="off" class="layui-input">
 				<button class="layui-btn">
 					<i class="layui-icon">&#xe615;</i>
 				</button>
-			</div>
+			</form>
 		</div>
 		<xblock>
 		<button class="layui-btn layui-btn-danger" onclick="delAll()">
@@ -36,53 +36,17 @@
 			<i class="layui-icon"></i>添加
 		</button>
 		<div id="listDiv"></div>
-		<span class="x-right" style="line-height: 40px">共有数据：88 条</span> </xblock>
+		</xblock>
 
 	</div>
-	<div id="demo8"></div>
-	<script>
-		layui.use('laypage', function() {
-
-			var laypage = layui.laypage;
-			laypage.render({
-				elem : 'demo8',
-				count : 70 //数据总数，从服务端得到
-				,
-				layout : [ 'limit', 'prev', 'page', 'next' ],
-				jump : function(obj, first) {
-					//obj包含了当前分页的所有参数，比如：
-					console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
-					console.log(obj.limit); //得到每页显示的条数
-
-					//首次不执行
-					if (!first) {
-						//do something
-					}
-				}
-			});
-		});
-	</script>
 
 	<script>
-		function s(formId, target) {
-			$.get('/adminUser/list', function(data) {
-				$("#" + target).html(data);
-			});
-		}
-		layui.use('laydate', function() {
-			var laydate = layui.laydate;
-
-			//执行一个laydate实例
-			laydate.render({
-				elem : '#start' //指定元素
-			});
-
-			//执行一个laydate实例
-			laydate.render({
-				elem : '#end' //指定元素
-			});
-		});
-
+		$(function() {
+			$("#searchForm").click();	
+			initDate("start");
+			initDate("end");
+		})
+	
 		/*用户-停用*/
 		function member_stop(obj, id) {
 			layer.confirm('确认要停用吗？', function(index) {
@@ -128,9 +92,7 @@
 		}
 
 		function delAll(argument) {
-
 			var data = tableCheck.getData();
-
 			layer.confirm('确认要删除吗？' + data, function(index) {
 				//捉到所有被选中的，发异步进行删除
 				layer.msg('删除成功', {
