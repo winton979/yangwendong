@@ -77,7 +77,7 @@
 	
 	
 	<!-- 定义无需Controller的url<->view直接映射 -->
-	<mvc:view-controller path="/" view-name="redirect:/index" />
+	<mvc:view-controller path="/" view-name="redirect:/" />
 
 	<!-- 定义跳转的文件的前后缀 ，视图模式配置 -->
 	<bean

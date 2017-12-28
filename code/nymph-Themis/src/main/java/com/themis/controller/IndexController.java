@@ -16,7 +16,15 @@ public class IndexController {
 	 */
 	@GetMapping
 	public String index() {
-		return "portal/index";
+		return "index";
+	}
+	
+	/**
+	 * 登陆页面
+	 */
+	@GetMapping(value="welcome")
+	public String welcome() {
+		return "welcome";
 	}
 	
 	@GetMapping(value="/login")
