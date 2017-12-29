@@ -16,13 +16,12 @@
 	</div>
 	<div class="x-body">
 		<div class="layui-row">
-			<form id="searchForm" class="layui-form layui-col-md12 x-so"
-				onclick="formSubmit('/adminUser/list','searchForm','listDiv')">
+			<form id="searchForm" class="layui-form layui-col-md12 x-so">
 				<input class="layui-input" value="10" name="pageSize" id="pageSize">
 				<input class="layui-input" value="1" name="pageNum" id="pageNumber">
 				<input type="text" name="username" placeholder="请输入用户名"
 					autocomplete="off" class="layui-input">
-				<button class="layui-btn">
+				<button class="layui-btn" id="sb">
 					<i class="layui-icon">&#xe615;</i>
 				</button>
 			</form>
@@ -42,10 +41,14 @@
 
 	<script>
 		$(function() {
-			$("#searchForm").click();	
+			initList();
 			initDate("start");
 			initDate("end");
 		})
+		
+		function initList() {
+			formSubmit('/adminUser/list','searchForm','listDiv');
+		}
 	
 		/*用户-停用*/
 		function member_stop(obj, id) {
