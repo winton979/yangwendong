@@ -21,6 +21,7 @@ function initPage(url,formId,listDiv,data,pageId) {
 		elem : 'pageDiv',
 		count : data.total // 数据总数，从服务端得到
 		,
+		limit : data.pageSize,
 		curr:data.pageNum,
 		layout : [ 'limit', 'prev', 'page', 'next' ],
 		jump : function(obj, first) {

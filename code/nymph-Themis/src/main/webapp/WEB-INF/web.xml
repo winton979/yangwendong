@@ -16,6 +16,12 @@
 	<listener>
 		<listener-class>net.bull.javamelody.SessionListener</listener-class>
 	</listener>
+	
+	<listener>  
+	    <listener-class>  
+	        org.springframework.web.context.request.RequestContextListener  
+	    </listener-class>  
+	</listener>
 
 	<filter>
 		<filter-name>encodingFilter</filter-name>

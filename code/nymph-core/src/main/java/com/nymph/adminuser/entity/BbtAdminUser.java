@@ -8,6 +8,8 @@ import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.annotations.Version;
+
 import java.io.Serializable;
 
 /**
@@ -16,7 +18,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author winton
- * @since 2017-12-26
+ * @since 2017-12-30
  */
 @TableName("bbt_admin_user")
 public class BbtAdminUser extends Model<BbtAdminUser> {
@@ -71,6 +73,7 @@ public class BbtAdminUser extends Model<BbtAdminUser> {
     /**
      * 版本
      */
+	@Version
 	@TableField("VERSION")
 	private Integer version;
     /**
@@ -258,6 +261,42 @@ public class BbtAdminUser extends Model<BbtAdminUser> {
 	public void setNickName(String nickName) {
 		this.nickName = nickName;
 	}
+
+	public static final String SID = "SID";
+
+	public static final String ORG_SID = "ORG_SID";
+
+	public static final String USER_NAME = "USER_NAME";
+
+	public static final String USER_PASS = "USER_PASS";
+
+	public static final String USER_EMAIL = "USER_EMAIL";
+
+	public static final String ENABLED = "ENABLED";
+
+	public static final String LAST_LOGIN_TIME = "LAST_LOGIN_TIME";
+
+	public static final String CREATED_BY = "CREATED_BY";
+
+	public static final String CREATED_DT = "CREATED_DT";
+
+	public static final String VERSION = "VERSION";
+
+	public static final String UPDATED_BY = "UPDATED_BY";
+
+	public static final String UPDATED_DT = "UPDATED_DT";
+
+	public static final String USER_TYPE = "USER_TYPE";
+
+	public static final String SALT = "SALT";
+
+	public static final String WRONG_PASSWORD_COUNT = "WRONG_PASSWORD_COUNT";
+
+	public static final String LAST_WRONG_PASS_TIME = "LAST_WRONG_PASS_TIME";
+
+	public static final String REMARKS = "REMARKS";
+
+	public static final String NICK_NAME = "NICK_NAME";
 
 	@Override
 	protected Serializable pkVal() {
