@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.annotations.Version;
 import java.io.Serializable;
 
 /**
@@ -14,7 +15,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author winton
- * @since 2017-12-26
+ * @since 2017-12-31
  */
 @TableName("bbt_admin_user_re_org")
 public class BbtAdminUserReOrg extends Model<BbtAdminUserReOrg> {
@@ -48,6 +49,10 @@ public class BbtAdminUserReOrg extends Model<BbtAdminUserReOrg> {
 	public void setOrgSid(Long orgSid) {
 		this.orgSid = orgSid;
 	}
+
+	public static final String TABLE_FIELD_USER_SID = "USER_SID";
+
+	public static final String TABLE_FIELD_ORG_SID = "ORG_SID";
 
 	@Override
 	protected Serializable pkVal() {

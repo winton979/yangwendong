@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.annotations.Version;
 import java.io.Serializable;
 
 /**
@@ -14,7 +15,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author winton
- * @since 2017-12-26
+ * @since 2017-12-31
  */
 @TableName("bbt_admin_role_re_perm")
 public class BbtAdminRoleRePerm extends Model<BbtAdminRoleRePerm> {
@@ -48,6 +49,10 @@ public class BbtAdminRoleRePerm extends Model<BbtAdminRoleRePerm> {
 	public void setPermissionSid(Long permissionSid) {
 		this.permissionSid = permissionSid;
 	}
+
+	public static final String TABLE_FIELD_ROLE_SID = "ROLE_SID";
+
+	public static final String TABLE_FIELD_PERMISSION_SID = "PERMISSION_SID";
 
 	@Override
 	protected Serializable pkVal() {

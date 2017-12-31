@@ -20,7 +20,7 @@ import com.nymph.adminuser.service.IBbtAdminUserService;
  * </p>
  *
  * @author winton
- * @since 2017-12-26
+ * @since 2017-12-31
  */
 @Service
 public class BbtAdminUserServiceImpl extends ServiceImpl<BbtAdminUserMapper, BbtAdminUser> implements IBbtAdminUserService {

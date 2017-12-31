@@ -11,17 +11,10 @@ import com.github.pagehelper.PageInfo;
  * </p>
  *
  * @author winton
- * @since 2017-12-26
+ * @since 2017-12-31
  */
 public interface IBbtAdminUserService extends IService<BbtAdminUser> {
 
-	/**
-	 * 分页
-	 * @param wrapper
-	 * @return
-	 * @author winton
-	 * @since 2017年12月30日
-	 */
 	PageInfo<BbtAdminUser> page(Wrapper<BbtAdminUser> wrapper);
 
 }

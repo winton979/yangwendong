@@ -25,21 +25,21 @@ public class R {
 	 * 只包含code的成功返回
 	 */
 	public static R ok() {
-		return new R(200,null,"");
+		return new R(1,null,"");
 	}
 	
 	/**
 	 * 包含数据和消息的成功返回
 	 */
 	public static R ok(Object data,String msg) {
-		return new R(200,data,msg);
+		return new R(1,data,msg);
 	}
 	
 	/**
 	 * 只包含消息的成功返回
 	 */
 	public static R ok(String msg) {
-		return new R(200,null,msg);
+		return new R(1,null,msg);
 	}
 	
 	/**

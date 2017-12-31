@@ -4,11 +4,6 @@
 <table class="layui-table">
 	<thead>
 		<tr>
-			<th>
-				<div class="layui-unselect header layui-form-checkbox" lay-skin="primary">
-					<i class="layui-icon">&#xe605;</i>
-				</div>
-			</th>
 			<th>ID</th>
 			<th>账户名</th>
 			<th>姓名</th>
@@ -25,11 +20,6 @@
 	<tbody>
 		<c:forEach items="${list.list}" var="item">
 			<tr>
-				<td>
-					<div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'>
-						<i class="layui-icon">&#xe605;</i>
-					</div>
-				</td>
 				<td>${item.sid }</td>
 				<td>${item.userName}</td>
 				<td>${item.nickName}</td>
@@ -41,10 +31,10 @@
 				<td>${item.userType}</td>
 				<td>${item.remarks}</td>
 
-				<td class="td-manage">
-					<a onclick="member_stop(this,'10001')" href="javascript:;" title="启用"> <i class="layui-icon">&#xe601;</i>
+				<td class="">
+					<a class="layui-btn layui-btn-xs layui-btn-danger" onclick="member_stop(this,'10001')" href="javascript:;" title="启用">停用/启用
 					</a>
-					<a title="编辑" onclick="x_admin_show('编辑','member-edit.html',600,400)" href="javascript:;"> <i class="layui-icon">&#xe642;</i>
+					<a class="layui-btn layui-btn-xs" onclick="x_admin_show('编辑','member-edit.html',600,400)" href="javascript:;">编辑
 					</a>
 					<a onclick="x_admin_show('修改密码','member-password.html',600,400)" title="修改密码" href="javascript:;"> <i class="layui-icon">&#xe631;</i>
 					</a>

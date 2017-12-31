@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.annotations.Version;
 import java.io.Serializable;
 
 /**
@@ -16,7 +17,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author winton
- * @since 2017-12-26
+ * @since 2017-12-31
  */
 @TableName("bbt_admin_role")
 public class BbtAdminRole extends Model<BbtAdminRole> {
@@ -141,6 +142,24 @@ public class BbtAdminRole extends Model<BbtAdminRole> {
 	public void setUpdatedDt(Date updatedDt) {
 		this.updatedDt = updatedDt;
 	}
+
+	public static final String TABLE_FIELD_SID = "SID";
+
+	public static final String TABLE_FIELD_ROLE_CODE = "ROLE_CODE";
+
+	public static final String TABLE_FIELD_ROLE_DESC = "ROLE_DESC";
+
+	public static final String TABLE_FIELD_STATUS = "STATUS";
+
+	public static final String TABLE_FIELD_CREATED_BY = "CREATED_BY";
+
+	public static final String TABLE_FIELD_CREATED_DT = "CREATED_DT";
+
+	public static final String TABLE_FIELD_VERSION = "VERSION";
+
+	public static final String TABLE_FIELD_UPDATED_BY = "UPDATED_BY";
+
+	public static final String TABLE_FIELD_UPDATED_DT = "UPDATED_DT";
 
 	@Override
 	protected Serializable pkVal() {

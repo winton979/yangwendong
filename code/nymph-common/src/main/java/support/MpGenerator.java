@@ -67,7 +67,8 @@ public class MpGenerator {
     // strategy.setCapitalMode(true);// 全局大写命名 ORACLE 注意
         strategy.setTablePrefix(new String[] { "" });// 此处可以修改为您的表前缀
         strategy.setNaming(NamingStrategy.underline_to_camel);// 表名生成策略
-        strategy.setInclude(new String[] { "bbt_admin_user" }); // 需要生成的表
+        strategy.setVersionFieldName("version");
+        strategy.setInclude(new String[] { "bbt_admin_user","bbt_admin_org","bbt_admin_permission","bbt_admin_role","bbt_admin_role_re_perm","bbt_admin_user_re_org","bbt_admin_user_re_role","bbt_system_code" }); // 需要生成的表
         // strategy.setExclude(new String[]{"test"}); // 排除生成的表
         // 自定义实体父类
         // strategy.setSuperEntityClass("com.baomidou.demo.TestEntity");
@@ -148,6 +149,6 @@ public class MpGenerator {
         mpg.execute();
 
         // 打印注入设置【可无】
-        System.err.println(mpg.getCfg().getMap().get("abc"));
+        //System.err.println(mpg.getCfg().getMap().get("abc"));
     }
 }

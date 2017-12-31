@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.annotations.Version;
 import java.io.Serializable;
 
 /**
@@ -16,7 +17,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author winton
- * @since 2017-12-26
+ * @since 2017-12-31
  */
 @TableName("bbt_admin_org")
 public class BbtAdminOrg extends Model<BbtAdminOrg> {
@@ -167,6 +168,28 @@ public class BbtAdminOrg extends Model<BbtAdminOrg> {
 	public void setEnabled(Integer enabled) {
 		this.enabled = enabled;
 	}
+
+	public static final String TABLE_FIELD_SID = "SID";
+
+	public static final String TABLE_FIELD_PSID = "PSID";
+
+	public static final String TABLE_FIELD_ORG_NAME = "ORG_NAME";
+
+	public static final String TABLE_FIELD_LEVEL = "LEVEL";
+
+	public static final String TABLE_FIELD_CREATED_BY = "CREATED_BY";
+
+	public static final String TABLE_FIELD_CREATED_DT = "CREATED_DT";
+
+	public static final String TABLE_FIELD_VERSION = "VERSION";
+
+	public static final String TABLE_FIELD_UPDATED_BY = "UPDATED_BY";
+
+	public static final String TABLE_FIELD_UPDATED_DT = "UPDATED_DT";
+
+	public static final String TABLE_FIELD_ORG_ATTRVALUE = "ORG_ATTRVALUE";
+
+	public static final String TABLE_FIELD_ENABLED = "ENABLED";
 
 	@Override
 	protected Serializable pkVal() {
