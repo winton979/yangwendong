@@ -15,12 +15,12 @@ public class MyExceptionHandler {
 	@ExceptionHandler(value={Exception.class})
 	@ResponseBody
 	public R resolveException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
+		ex.printStackTrace();
 		// 接口参数为空的异常
 		if (ex instanceof IllegalStateException) {
 			IllegalStateException e = (IllegalStateException) ex;
-			return R.r(500, "", e.getMessage());
+			return R.r(-1, "", e.getMessage());
 		}
-		
 		return R.r(-1, "", ex.getMessage());
 	}
 

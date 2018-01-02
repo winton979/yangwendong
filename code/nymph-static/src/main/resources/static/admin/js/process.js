@@ -37,3 +37,42 @@ function initPage(url,formId,listDiv,data,pageId) {
 	});
 }
 
+function ajaxForm(formUrl,data,saveUrl,formId,title,w,h) {
+	$.get(formUrl, data, function(r) {
+		var index = layer.open({
+			title : title,
+			content : r,
+			area : [ w, h ],
+			btn : [ '保存' ],
+			yes : function(index, layero) {
+				$.post(saveUrl, $("#"+formId).serialize(),function(result) {
+					alert(result.msg)
+					if (result.code == 1) {
+						layer.close(index);
+						location.replace(location.href);
+					} else {
+						return false;
+					}
+				});
+			}
+		});
+	}
+)}
+
+
+function deleteAjax(obj, data, url) {
+	layer.confirm('确认要删除吗？', function(index) {
+		$.post(url,data,function(r) {
+			if (r.code == 1) {
+				$(obj).parents("tr").remove();
+				layer.msg('已删除!', {
+					icon : 1,
+					time : 1000
+				});
+			} else {
+				layer.msg(r.msg);
+			}
+		})
+	});
+}
+

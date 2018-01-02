@@ -31,14 +31,12 @@
 				<td>${item.userType}</td>
 				<td>${item.remarks}</td>
 
-				<td class="">
+				<td>
 					<a class="layui-btn layui-btn-xs layui-btn-danger" onclick="member_stop(this,'10001')" href="javascript:;" title="启用">停用/启用
 					</a>
-					<a class="layui-btn layui-btn-xs" onclick="x_admin_show('编辑','member-edit.html',600,400)" href="javascript:;">编辑
+					<a class="layui-btn layui-btn-xs" onclick="ajaxForm('/adminUser/edit',{'userId':${item.sid}},'/adminUser/save','editForm','编辑','800px','800px')"><i class="layui-icon">&#xe642;</i>
 					</a>
-					<a onclick="x_admin_show('修改密码','member-password.html',600,400)" title="修改密码" href="javascript:;"> <i class="layui-icon">&#xe631;</i>
-					</a>
-					<a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;"> <i class="layui-icon">&#xe640;</i>
+					<a class="layui-btn layui-btn-xs" onclick="deleteAjax(this,{'userId':${item.sid}},'/adminUser/del')" href="javascript:;"><i class="layui-icon">&#xe640;</i>
 					</a>
 				</td>
 			</tr>

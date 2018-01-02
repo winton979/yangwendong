@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.baomidou.mybatisplus.mapper.Condition;
 import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.coreopsis.R;
+import com.coreopsis.filter.servletHelper;
+import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 import com.github.pagehelper.PageInfo;
 import com.nymph.adminuser.entity.BbtAdminUser;
 import com.nymph.adminuser.service.IBbtAdminUserService;
@@ -32,11 +34,12 @@ public class BbtAdminUserController {
 	 */
 	@GetMapping("/index")
 	public String index(Model model, HttpServletRequest request) {
+		HttpServletRequest httpServletRequest = servletHelper.threadLocalRequest.get();
 		return "system/adminuser/index";
 	}
 	
 	/**
-	 * 新增
+	 * 新增页面
 	 */
 	@GetMapping(value="add")
 	public String add(Model model, HttpServletRequest request) {
@@ -58,11 +61,39 @@ public class BbtAdminUserController {
 	 */
 	@GetMapping(value = "list")
 	public String list(Model model, HttpServletRequest request) {
-		System.out.println(request.getParameter(BbtAdminUser.TABLE_FIELD_USER_NAME));
 		Wrapper<BbtAdminUser> wrapper = Condition.create().like(BbtAdminUser.TABLE_FIELD_USER_NAME, request.getParameter(BbtAdminUser.TABLE_FIELD_USER_NAME));
 		PageInfo<BbtAdminUser> rInfo = iBbtAdminUserService.page(wrapper);
 		model.addAttribute("list", rInfo);
 		return "system/adminuser/list";
+	}
+	
+	/**
+	 * 编辑页面
+	 */
+	@GetMapping(value="edit")
+	public String edit(Model model,Long userId) {
+		model.addAttribute("item", iBbtAdminUserService.selectById(userId));
+		return "system/adminuser/edit";
+	}
+	
+	/**
+	 * 更新
+	 */
+	@PostMapping(value="update")
+	@ResponseBody
+	public R update(BbtAdminUser bbtAdminUser,Model model) {
+		iBbtAdminUserService.updateById(bbtAdminUser);
+		return R.ok("更新成功");
+	}
+	
+	/**
+	 * 删除
+	 */
+	@PostMapping(value="del")
+	@ResponseBody
+	public R save(Long userId) {
+		iBbtAdminUserService.deleteById(userId);
+		return R.ok("删除成功");
 	}
 
 }

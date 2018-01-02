@@ -19,13 +19,13 @@
 				<input class="layui-input layui-hide" value="10" name="pageSize" id="pageSize"> <input class="layui-hide layui-input" value="1" name="pageNum" id="pageNumber"> <input type="text" name="USER_NAME" placeholder="请输入用户名" autocomplete="off" class="layui-input">
 			</form>
 			<button class="layui-btn layui-btn-normal">
-				<a href="/adminUser/index">重置</a>
+				<a href="javascript:location.replace(location.href);">重置</a>
 			</button>
 			<button class="layui-btn " onclick="initList()">查询</button>
 		</div>
 		<!-- form end -->
 		<xblock>
-		<button class="layui-btn" onclick="addForm('/adminUser/add')">
+		<button class="layui-btn" onclick="ajaxForm('/adminUser/add','','/adminUser/save','addForm','添加用户','800px','700px')">
 			<i class="layui-icon"></i>添加
 		</button>
 		<div id="listDiv"></div>
@@ -39,27 +39,7 @@
 			initDate("start");
 			initDate("end");
 		})
-
-		function addForm(url) {
-			$.get(url, function(r) {
-				layer.open({
-					title : '添加用户',
-					content : r,
-					area : [ '500px', '500px' ],
-					btn : [ '保存' ],
-					yes : function(index, layero) {
-						$.post("/adminUser/save", $("#addForm").serialize(),function(result) {
-							if (result.code == 1) {
-								alert("你妈的")
-							}
-							console.log(result)
-							alert(result.msg)
-									return false;
-					});
-				}
-			});
-		})}
-
+		
 		function initList() {
 			formSubmit('/adminUser/list?pageSize=10&pageNum=1', 'searchForm',
 					'listDiv');
@@ -94,18 +74,6 @@
 					});
 				}
 
-			});
-		}
-
-		/*用户-删除*/
-		function member_del(obj, id) {
-			layer.confirm('确认要删除吗？', function(index) {
-				//发异步删除数据
-				$(obj).parents("tr").remove();
-				layer.msg('已删除!', {
-					icon : 1,
-					time : 1000
-				});
 			});
 		}
 

@@ -25,7 +25,7 @@ public class R {
 	 * 只包含code的成功返回
 	 */
 	public static R ok() {
-		return new R(1,null,"");
+		return new R(1,null,"操作成功");
 	}
 	
 	/**
@@ -46,7 +46,7 @@ public class R {
 	 * 只包含code的失败返回
 	 */
 	public static R error() {
-		return new R(400,null,"");
+		return new R(400,null,"操作失败");
 	}
 	
 	/**
